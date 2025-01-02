@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Assignment</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            border: 2px solid goldenrod;
+            padding-bottom: 20px;
+            width: 600px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <canvas id="myCanvas" width="150" height="250">
+        </canvas>
+        <canvas id="myCanvas2" width="150" height="180">
+        </canvas>
+        <canvas id="myCanvas3" width="278" height="180">
+        </canvas>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        // first shap 
+        var canvas = document.getElementById("myCanvas");
+        var shap = canvas.getContext('2d');
+        // Create gradient
+        var grd = shap.createLinearGradient(0, 50, 200, 50);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "orange");
+
+        // Fill with gradient
+        shap.fillStyle = grd;
+        shap.fillRect(30, 90, 150, 90);
+
+        // second Shape 
+        var canvas = document.getElementById("myCanvas2");
+        var circle = canvas.getContext('2d');
+        circle.beginPath();
+        circle.arc(89, 65, 60, 0, 2 * Math.PI);
+        // circle.fill = "red"
+        circle.stroke();
+
+
+    //    Third Shape 
+        var canvas = document.getElementById("myCanvas3");
+        var shap3 = canvas.getContext('2d');
+        shap3.beginPath();
+        shap3.rect(30, 20, 450, 100);
+        shap3.fillStyle = "orange";
+        shap3.fill()
+        // }
+
+    }
+
+</script>
+
+</html>
