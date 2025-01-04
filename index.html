@@ -51,11 +51,21 @@
         var circle = canvas.getContext('2d');
         circle.beginPath();
         circle.arc(89, 65, 60, 0, 2 * Math.PI);
-        // circle.fill = "red"
+        // Create gradient
+        var grdColor = circle.createLinearGradient(0, 50, 200, 50);
+        grdColor.addColorStop(0, "cornflowerblue");
+        grdColor.addColorStop(1, "red");
+
+        // Fill with gradient
+
+        circle.fillStyle = grdColor;
+        circle.fill();
+        circle.lineWidth = 1;
+        circle.strokeStyle = "black";
         circle.stroke();
 
 
-    //    Third Shape 
+        //    Third Shape 
         var canvas = document.getElementById("myCanvas3");
         var shap3 = canvas.getContext('2d');
         shap3.beginPath();
